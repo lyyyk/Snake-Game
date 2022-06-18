@@ -1,4 +1,5 @@
 #include "ScoreManager.h"
+//updates and calculates the score depending on the time elapsed
 
 void ScoreManager::Update(float dt) {
 	timer += dt;
