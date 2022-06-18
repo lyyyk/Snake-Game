@@ -11,11 +11,12 @@ void Screen::ScreenInit()
 {
 	CONSOLE_CURSOR_INFO cci;
 
-	// °¡»óÀÇ ÄÜ¼ÖÃ¢ 2°³·ê ¸¸µç´Ù.
+	// ê°€ìƒì˜ ì½˜ì†”ì°½ 2ê°œë£° ë§Œë“ ë‹¤.
+	//make 2 virtual consoles
 	g_hScreen[0] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 	g_hScreen[1] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 
-	// Ä¿¼­ ¼û±â±â
+	//hide cursor
 	cci.dwSize = 1;
 	cci.bVisible = FALSE;
 	SetConsoleCursorInfo(g_hScreen[0], &cci);
@@ -51,7 +52,7 @@ void Screen::ScreenPrint(int x, int y, const char* string)
 	WriteFile(g_hScreen[g_nScreenIndex], string, strlen(string), &dw, NULL);
 }
 
-// 1 ~ 15 ±îÁö »ö»ó ¼³Á¤ °¡´É
+//can set colors 1~15
 void Screen::SetColor(unsigned short color)
 {
 	SetConsoleTextAttribute(g_hScreen[g_nScreenIndex], color);
