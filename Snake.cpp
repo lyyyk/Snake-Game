@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <windows.h>
+//bring snake class
 #include "Snake.h"
 
 using namespace std;
@@ -13,6 +14,7 @@ Snake::Snake() {
 	positions[0] = Point(position);
 }
 
+//updating snake's position
 void Snake::Update(float dt) {
 	Keyboard();
 	timer += dt;
@@ -30,6 +32,7 @@ void Snake::Update(float dt) {
 	}
 }
 
+//input from keyboard
 void Snake::Keyboard() {
 	if (_kbhit()) {
 		int key;
