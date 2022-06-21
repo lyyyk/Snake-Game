@@ -14,21 +14,19 @@ using namespace std;
 int main(void)
 {
 	srand(time(NULL));
-	system("mode con cols=120lines=25");//ÄÜ¼Ö Å©±â Á¶Á¤
+	system("mode con cols=120lines=25");//ì½˜ì†” í¬ê¸° ì¡°ì •
 	ScreenManager manager;
 	manager.Init();
-	//ÃÊ±âÈ­¸éÀº ¿©±â¼­
+	//initialize screen
 	clock_t prev = clock();
 	while (1)
 	{
-		//ÇÁ·¹ÀÓ µ¨Å¸ °è»ê½Ä
+		//time
 		clock_t now = clock();
 		int deltaMs = now - prev;
 		prev = now;
 		float delta = deltaMs / 1000.0;
-		//
 
-		//¾Æ·§ÁÙ ºÎÅÍ ±¸Çö ½ÃÀÛ
 		if (manager.curScene == ScreenManager::Scene::GameScene) {
 			manager.Update(delta);
 			manager.Render();
