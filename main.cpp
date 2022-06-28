@@ -14,14 +14,14 @@ using namespace std;
 int main(void)
 {
 	srand(time(NULL));
-	system("mode con cols=120lines=25");//콘솔 크기 조정
+	system("mode con cols=120lines=25");//adjust console size
 	ScreenManager manager;
 	manager.Init();
 	//initialize screen
 	clock_t prev = clock();
 	while (1)
 	{
-		//time
+		//keep track of time
 		clock_t now = clock();
 		int deltaMs = now - prev;
 		prev = now;
