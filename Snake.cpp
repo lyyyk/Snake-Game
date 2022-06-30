@@ -14,7 +14,7 @@ Snake::Snake() {
 	positions[0] = Point(position);
 }
 
-//updating snake's position
+//updates snake's position
 void Snake::Update(float dt) {
 	Keyboard();
 	timer += dt;
@@ -32,7 +32,7 @@ void Snake::Update(float dt) {
 	}
 }
 
-//input from keyboard
+//receives input from keyboard
 void Snake::Keyboard() {
 	if (_kbhit()) {
 		int key;
