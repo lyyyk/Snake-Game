@@ -68,8 +68,5 @@ void Snake::Keyboard() {
 				break;
 			}
 		}
-		//else if (key == 32) {
-		//	nodeLength += 1;
-		//}
 	}
 }
